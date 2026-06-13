@@ -1,29 +1,38 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        leading: const Icon(Icons.menu, color: Colors.black87),
-        actions: const [
-          Icon(Icons.history, color: Colors.black87),
-          SizedBox(width: 12.0),
-        ],
-        centerTitle: true,
-        title: const Text(
-          "CALCULATORS APP ",
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 20.0,
-            color: Colors.white,
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          actions: [
+            IconButton(
+              icon: Icon(Icons.dark_mode, color: Colors.black),
+              onPressed: () {
+                HapticFeedback.lightImpact();
+              },
+            ),
+            SizedBox(width: 28.0),
+          ],
+          title: const Text(
+            "CALCULATORS APP ",
+            textDirection: TextDirection.ltr,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 20.0,
+              color: Colors.black87,
+            ),
           ),
+          backgroundColor: Colors.blueGrey,
+          elevation: 8.0,
         ),
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: Colors.white70,
       ),
-      backgroundColor: Colors.white,
     );
   }
 }
