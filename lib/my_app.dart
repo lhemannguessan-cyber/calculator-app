@@ -1,4 +1,3 @@
-import 'package:calculator_app/my_home_page.dart';
 import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {
@@ -7,8 +6,24 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("bonjour")),
-      backgroundColor: Colors.greenAccent,
+      appBar: AppBar(
+        leading: const Icon(Icons.menu, color: Colors.black87),
+        actions: const [
+          Icon(Icons.history, color: Colors.black87),
+          SizedBox(width: 12.0),
+        ],
+        centerTitle: true,
+        title: const Text(
+          "CALCULATORS APP ",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 20.0,
+            color: Colors.white,
+          ),
+        ),
+        backgroundColor: Colors.blueGrey,
+      ),
+      backgroundColor: Colors.white,
     );
   }
 }
